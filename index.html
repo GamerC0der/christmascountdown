@@ -14,24 +14,24 @@
             <h1 style="font-size: 3rem; font-weight: 300; margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 0.1em;">Christmas Countdown</h1>
         </div>
 
-        <div style="display: flex; gap: 1.25rem; animation: fadeIn 1s ease-in-out; justify-content: center; align-items: center;">
-            <div class="card" style="background-color: #ef4444; padding: 1.25rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
-                <span class="days" style="display: block; font-size: 2.25rem; font-weight: 700;"></span>
-                <span class="label" style="display: block; font-size: 0.875rem; color: white; margin-top: 0.25rem; text-transform: uppercase; font-weight: 500;">Days</span>
-            </div>
-            <div class="card" style="background-color: #22c55e; padding: 1.25rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
-                <span class="hours" style="display: block; font-size: 2.25rem; font-weight: 700;"></span>
-                <span class="label" style="display: block; font-size: 0.875rem; color: white; margin-top: 0.25rem; text-transform: uppercase; font-weight: 500;">Hours</span>
-            </div>
-            <div class="card" style="background-color: #ef4444; padding: 1.25rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
-                <span class="minutes" style="display: block; font-size: 2.25rem; font-weight: 700;"></span>
-                <span class="label" style="display: block; font-size: 0.875rem; color: white; margin-top: 0.25rem; text-transform: uppercase; font-weight: 500;">Minutes</span>
-            </div>
-            <div class="card" style="background-color: #22c55e; padding: 1.25rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
-                <span class="seconds" style="display: block; font-size: 2.25rem; font-weight: 700;"></span>
-                <span class="label" style="display: block; font-size: 0.875rem; color: white; margin-top: 0.25rem; text-transform: uppercase; font-weight: 500;">Seconds</span>
-            </div>
-        </div>
+       <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+    <div class="card bg-red-500 p-5 rounded-lg shadow-md transition-all hover:scale-105 hover:shadow-lg">
+        <span class="days block text-4xl font-bold"></span>
+        <span class="label block text-sm text-white mt-1 uppercase font-medium">Days</span>
+    </div>
+    <div class="card bg-green-500 p-5 rounded-lg shadow-md transition-all hover:scale-105 hover:shadow-lg">
+        <span class="hours block text-4xl font-bold"></span>
+        <span class="label block text-sm text-white mt-1 uppercase font-medium">Hours</span>
+    </div>
+    <div class="card bg-red-500 p-5 rounded-lg shadow-md transition-all hover:scale-105 hover:shadow-lg">
+        <span class="minutes block text-4xl font-bold"></span>
+        <span class="label block text-sm text-white mt-1 uppercase font-medium">Minutes</span>
+    </div>
+    <div class="card bg-green-500 p-5 rounded-lg shadow-md transition-all hover:scale-105 hover:shadow-lg">
+        <span class="seconds block text-4xl font-bold"></span>
+        <span class="label block text-sm text-white mt-1 uppercase font-medium">Seconds</span>
+    </div>
+</div>
     </main>
 </body>
     <script>
@@ -64,6 +64,10 @@
                 transform: translateY(100vh);
             }
         }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
 
         .animate-fall {
             animation: fall linear infinite;
@@ -88,11 +92,17 @@
                 opacity: 1;
             }
         }
-
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
         .card {
             animation: fallDown 1s ease-out forwards;
         }
-
+        
         .fall:nth-child(1) {
             animation-delay: 0s;
         }
@@ -105,5 +115,6 @@
         .fall:nth-child(4) {
             animation-delay: 0.6s;
         }
+        
         
     </style>
